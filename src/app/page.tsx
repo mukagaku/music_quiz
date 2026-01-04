@@ -34,12 +34,12 @@ const ANSWER_FORMATS = {
 // 五線譜描画用の定数
 const STAFF_Y = [20, 40, 60, 80, 100];
 const SHARP_POSITIONS = {
-  treble: [22, 52, 14, 42, 72, 32, 62],
-  bass: [42, 72, 32, 62, 92, 52, 82],
+  treble: [20, 50, 14, 40, 70, 30, 60],
+  bass: [40, 70, 30, 60, 90, 50, 80],
 };
 const FLAT_POSITIONS = {
-  treble: [57, 27, 67, 37, 77, 47, 87],
-  bass: [77, 47, 87, 57, 97, 67, 107],
+  treble: [55, 25, 65, 35, 75, 45, 85],
+  bass: [75, 45, 85, 55, 95, 65, 105],
 };
 
 // --- コンポーネント ---
@@ -57,7 +57,7 @@ const MusicStaff = ({ clef, keyCount }: any) => {
 
   return (
     <div className="flex justify-center items-center bg-white p-4 rounded-lg shadow-md border-2 border-gray-200 mb-6 w-full max-w-md mx-auto h-48">
-      <svg width="300" height="140" viewBox="0 0 300 140">
+      <svg width="300" height="145" viewBox="0 0 300 145">
         {STAFF_Y.map((y, i) => (
           <line key={i} x1="10" y1={y} x2="290" y2={y} stroke="black" strokeWidth="2" />
         ))}
@@ -67,7 +67,7 @@ const MusicStaff = ({ clef, keyCount }: any) => {
             key={i} 
             x={80 + (i * 25)} 
             y={positions[i] + 15}
-            fontSize="45" 
+            fontSize="40" 
             fontFamily="serif"
           >
             {symbol}
@@ -317,9 +317,9 @@ export default function MusicKeyQuiz() {
           </div>
 
           <p className="mb-8 text-gray-600 text-lg">
-            {score === 10 ? '完璧です！素晴らしい！🎵' : 
-             score >= 7 ? 'よくできました！🎹' : 
-             '繰り返し練習してみましょう！💪'}
+            {score === 10 ? '完璧です！素晴らしい！' : 
+             score >= 7 ? 'よくできました！' : 
+             '繰り返し練習してみましょう！'}
           </p>
 
           <button
