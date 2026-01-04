@@ -83,7 +83,7 @@ export default function MusicKeyQuiz() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [answerLang, setAnswerLang] = useState('ja'); // 回答の言語設定
   const [gameState, setGameState] = useState('menu'); // menu, playing, result
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState<any[]>([]);
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
