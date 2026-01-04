@@ -123,7 +123,7 @@ export default function MusicKeyQuiz() {
       });
     }
 
-    setQuestions(newQuestions);
+    setQuestions(newQuestions as any); // 必要に応じて as any を追加
     setScore(0);
     setCurrentQIndex(0);
     setGameState('playing');
