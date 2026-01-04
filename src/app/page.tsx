@@ -34,8 +34,8 @@ const ANSWER_FORMATS = {
 // 五線譜描画用の定数
 const STAFF_Y = [20, 40, 60, 80, 100];
 const SHARP_POSITIONS = {
-  treble: [20, 50, 14, 40, 70, 30, 60],
-  bass: [40, 70, 30, 60, 90, 50, 80],
+  treble: [18, 48, 10, 38, 68, 28, 58],
+  bass: [38, 68, 28, 58, 88, 48, 78],
 };
 const FLAT_POSITIONS = {
   treble: [55, 25, 65, 35, 75, 45, 85],
