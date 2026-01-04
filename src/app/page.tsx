@@ -202,10 +202,10 @@ export default function MusicKeyQuiz() {
                   }`}>
                     {answerLang === langKey && <div className="w-2.5 h-2.5 rounded-full bg-indigo-600" />}
                   </div>
-                  <span className="font-bold">{ANSWER_FORMATS[langKey].label}</span>
+                  <span className="font-bold">{(ANSWER_FORMATS as any)[langKey].label}</span>
                 </div>
                 <span className="text-sm text-gray-500 bg-white px-2 py-1 rounded border border-gray-100 shadow-sm">
-                  例: {ANSWER_FORMATS[langKey].sample}
+                  例: {(ANSWER_FORMATS as any)[langKey].sample}
                 </span>
                 <input 
                   type="radio" 
@@ -246,7 +246,7 @@ export default function MusicKeyQuiz() {
           <MusicStaff clef={currentQ.clef} keyCount={currentQ.correctKey.count} />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {currentQ.options.map((option, index) => {
+            {currentQ.options.map((option: any, index: number) => {
               const isSelected = selectedAnswer === index;
               const isCorrectOption = 
                 isAnswerChecked && 
@@ -283,12 +283,12 @@ export default function MusicKeyQuiz() {
           {isAnswerChecked && (
             <div className="mt-6 text-center animate-fade-in">
               <p className={`text-xl font-bold mb-4 ${
-                  questions[currentQIndex].correctKey.count === questions[currentQIndex].options[selectedAnswer].count &&
-                  questions[currentQIndex].correctType === questions[currentQIndex].options[selectedAnswer].type
+                  questions[currentQIndex].correctKey.count === questions[currentQIndex].options[selectedAnswer as any].count &&
+                  questions[currentQIndex].correctType === questions[currentQIndex].options[selectedAnswer as any].type
                   ? 'text-green-600' : 'text-red-600'
               }`}>
-                {questions[currentQIndex].correctKey.count === questions[currentQIndex].options[selectedAnswer].count &&
-                 questions[currentQIndex].correctType === questions[currentQIndex].options[selectedAnswer].type
+                {questions[currentQIndex].correctKey.count === questions[currentQIndex].options[selectedAnswer as any].count &&
+                 questions[currentQIndex].correctType === questions[currentQIndex].options[selectedAnswer as any].type
                  ? '正解!' : '不正解...'}
               </p>
               <button
