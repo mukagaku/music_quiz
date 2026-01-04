@@ -44,7 +44,7 @@ const FLAT_POSITIONS = {
 
 // --- コンポーネント ---
 
-const MusicStaff = ({ clef, keyCount }) => {
+const MusicStaff = ({ clef, keyCount }: any) => {
   const isSharp = keyCount > 0;
   const count = Math.abs(keyCount);
   const positions = isSharp 
@@ -132,7 +132,7 @@ export default function MusicKeyQuiz() {
     setSelectedAnswer(null);
   };
 
-  const handleAnswer = (option, index) => {
+  const handleAnswer = (option: any, index: any) => {
     if (isAnswerChecked) return;
     setSelectedAnswer(index);
     setIsAnswerChecked(true);
@@ -156,7 +156,7 @@ export default function MusicKeyQuiz() {
   };
 
   // 選択された回答言語に基づいてテキストを生成
-  const getAnswerText = (option) => {
+  const getAnswerText = (option: any) => {
     const format = ANSWER_FORMATS[answerLang];
     const name = option[option.type][answerLang];
     const suffix = option.type === 'major' ? format.majorSuffix : format.minorSuffix;
