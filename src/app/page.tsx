@@ -157,8 +157,8 @@ export default function MusicKeyQuiz() {
 
   // 選択された回答言語に基づいてテキストを生成
   const getAnswerText = (option: any) => {
-    const format = ANSWER_FORMATS[answerLang];
-    const name = option[option.type][answerLang];
+    const format = (ANSWER_FORMATS as any)[answerLang];
+    const name = (option[option.type] as any)[answerLang];
     const suffix = option.type === 'major' ? format.majorSuffix : format.minorSuffix;
     return `${name}${suffix}`;
   };
